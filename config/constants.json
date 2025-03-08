@@ -1,0 +1,91 @@
+{
+  "TRELLO": {
+    "LIST_NAMES": {
+      "BACKLOG": "Backlog",
+      "TODO": "To Do",
+      "IN_PROGRESS": "In Progress",
+      "REVIEW": "Review",
+      "DONE": "Done"
+    },
+    "LABEL_COLORS": {
+      "RED": "Blocker",
+      "YELLOW": "Warning",
+      "GREEN": "On Track",
+      "BLUE": "Feature",
+      "ORANGE": "Enhancement",
+      "PURPLE": "Research",
+      "BLACK": "Technical Debt"
+    },
+    "PRIORITY_LEVELS": {
+      "HIGH": "High Priority",
+      "MEDIUM": "Medium Priority",
+      "LOW": "Low Priority"
+    },
+    "CUSTOM_FIELDS": {
+      "STORY_POINTS": "Story Points",
+      "TIME_ESTIMATE": "Time Estimate",
+      "TIME_SPENT": "Time Spent",
+      "ASSIGNED_TO": "Assigned To",
+      "DUE_DATE": "Due Date",
+      "ACCEPTANCE_CRITERIA": "Acceptance Criteria"
+    }
+  },
+  "REPORT": {
+    "SECTIONS": [
+      "SPRINT_OVERVIEW",
+      "TASK_SUMMARY",
+      "ISSUES_BLOCKERS",
+      "PROGRESS_DELAYS",
+      "TEAM_PERFORMANCE",
+      "ACTION_ITEMS",
+      "RETROSPECTIVE"
+    ],
+    "METRICS": {
+      "VELOCITY": "Velocity",
+      "BURN_DOWN": "Burn Down",
+      "COMPLETION_RATE": "Completion Rate",
+      "STORY_POINTS_COMPLETED": "Story Points Completed",
+      "AVERAGE_CYCLE_TIME": "Average Cycle Time",
+      "BLOCKER_COUNT": "Blocker Count",
+      "TEAM_CAPACITY": "Team Capacity"
+    },
+    "CHARTS": {
+      "BURN_DOWN": "burn_down_chart",
+      "VELOCITY": "velocity_chart",
+      "TASK_DISTRIBUTION": "task_distribution_chart",
+      "BLOCKER_IMPACT": "blocker_impact_chart"
+    }
+  },
+  "TEAM_ROLES": {
+    "PRODUCT_OWNER": "Product Owner",
+    "SCRUM_MASTER": "Scrum Master",
+    "DEVELOPER": "Developer",
+    "DESIGNER": "Designer",
+    "QA": "Quality Assurance",
+    "DEVOPS": "DevOps",
+    "BUSINESS_ANALYST": "Business Analyst"
+  },
+  "TIME": {
+    "SPRINT_LENGTH_DAYS": 14,
+    "WORKING_DAYS_PER_WEEK": 5,
+    "HOURS_PER_DAY": 8,
+    "DAYS_OF_WEEK": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+  },
+  "STATUS_CODES": {
+    "SUCCESS": 200,
+    "CREATED": 201,
+    "BAD_REQUEST": 400,
+    "UNAUTHORIZED": 401,
+    "NOT_FOUND": 404,
+    "SERVER_ERROR": 500
+  },
+  "ERROR_MESSAGES": {
+    "API_CONNECTION_ERROR": "Failed to connect to API service",
+    "DATA_FETCH_ERROR": "Failed to fetch data from Trello",
+    "INVALID_BOARD_ID": "Invalid Trello board ID provided",
+    "INVALID_CARD_ID": "Invalid Trello card ID provided",
+    "MISSING_API_CREDENTIALS": "Missing API credentials",
+    "RATE_LIMIT_EXCEEDED": "API rate limit exceeded",
+    "REPORT_GENERATION_FAILED": "Failed to generate report"
+  }
+}
