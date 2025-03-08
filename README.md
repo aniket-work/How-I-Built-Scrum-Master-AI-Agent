@@ -1,129 +1,93 @@
 # Scrum Master AI Agent
 
-An AI-powered system that automates the collection, analysis, and reporting functions of a Scrum Master.
+Automating Sprint Management with Scrum Master AI Agents
 
-## Overview
 
-Scrum Master AI Agent leverages the CrewAI framework and Large Language Models to gather data from Trello boards, analyze sprint progress, identify bottlenecks, and generate comprehensive sprint reports. It helps agile teams improve their processes by providing insights and recommendations based on their project data.
+## TL;DR
+I built an AI-powered Scrum Master that connects to Trello, analyzes sprint data, and generates detailed reports automatically. It uses multiple specialized AI agents working together through the CrewAI framework, with each agent handling a specific part of the process: data collection, analysis, and reporting. The system is configurable and saves Scrum Masters hours of manual work each sprint.
 
-## Features
+## Introduction:
+Have you ever wished you could clone yourself to handle all the repetitive parts of being a Scrum Master? I did, which is why I built an AI agent to take care of the tedious aspects of sprint management. Scrum Master for a growing development team, spends hours each week collecting data, analyzing trends, and creating reports. I realized much of this work followed patterns that could be automated, freeing them to focus on what really matters — helping team solve problems and improve their process.
 
-- **Automated Data Collection**: Fetches all relevant data from Trello boards including cards, comments, attachments, and member assignments
-- **Comprehensive Sprint Analysis**: Identifies blockers, delays, and areas needing attention
-- **Team Performance Evaluation**: Analyzes workload distribution, completion rates, and individual contributions
-- **Process Bottleneck Detection**: Highlights areas where the sprint process may be breaking down
-- **Professional Report Generation**: Creates detailed, well-formatted sprint reports suitable for team members and executives
-- **Action Item Recommendations**: Suggests concrete steps to address identified issues
+## What’s This Article About?
+This article walks through how I built a system of AI agents that work together to automate sprint management tasks. I’ll explain how I used the CrewAI framework to create specialized agents that:
 
-## Project Structure
+- Collect data from Trello boards about tasks, team members, and progress
+- Analyze this data to identify blockers, delays, and team performance issues
+-Generate comprehensive, well-formatted sprint reports
 
-```
-scrum-master-ai/
-├── config/                # Configuration files
-├── src/                   # Source code
-│   ├── agents/            # Agent definitions
-│   ├── tasks/             # Task definitions
-│   ├── tools/             # Tool implementations
-│   ├── utils/             # Utility functions
-│   ├── models/            # Data models
-│   └── crew/              # Crew definitions
-├── templates/             # Report templates
-├── tests/                 # Unit tests
-├── scripts/               # Helper scripts
-├── docs/                  # Documentation
-├── main.py                # Main entry point
-└── requirements.txt       # Project dependencies
-```
+The system connects to your team’s Trello board, processes all the cards and lists, identifies issues like blockers and approaching deadlines, analyzes team workload distribution, and creates detailed reports — all without manual intervention. I’ve designed it to be configurable through external files, making it adaptable to different team workflows without changing code.
+
+Full Article : [https://medium.com/@learn-simplified/how-i-built-scrum-master-ai-agent-309522082e80
+
+
+## Tech Stack  
+
+![Design Diagram](design_docs/tech_stack.png)
+
+
+## Architecture
+
+![Design Diagram](design_docs/design.png)
+
+
+# Tutorial: Scrum Master AI Agent
 
 ## Prerequisites
+- Python installed on your system.
+- A basic understanding of virtual environments and command-line tools.
 
-- Python 3.9+
-- Trello API credentials
-- OpenAI API key or other LLM provider credentials
+## Steps
 
-## Installation
+1. **Virtual Environment Setup:**
+   - Create a dedicated virtual environment for our project:
+   
+     ```bash
+     python -m venv Scrum-Master-AI-Agent
+     ```
+   - Activate the environment:
+   
+     - Windows:
+       ```bash
+          Scrum-Master-AI-Agent\Scripts\activate        
+       ```
+     - Unix/macOS:
+       ```bash
+       source Scrum-Master-AI-Agent/bin/activate
+       ```
+   
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/scrum-master-ai.git
-   cd scrum-master-ai
+# Installation and Setup Guide
+
+**Install Project Dependencies:**
+
+Follow these steps to set up and run the  "Scrum Master AI Agent"
+
+1. Navigate to your project directory:
+   ```
+   cd path/to/your/project
+   ```
+   This ensures you're in the correct location for the subsequent steps.
+
+2. Install the required dependencies:
+   ```
+   pip install -r requirements.txt   
+   ```
+   This command installs all the necessary Python packages listed in the requirements.txt file.
+
+
+# Run - Hands-On Guide: Scrum Master AI Agent
+  
    ```
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
+   python main.py
+   
    ```
+   
+## Closing Thoughts
 
-3. Set up environment variables:
-   ```bash
-   cp .env.example .env
-   # Edit .env with your API keys and configuration
-   ```
+The future of AI in business isn’t about replacing humans — it’s about collaboration. As AI tools become more accessible, we’ll see more specialized agents handling routine work across all business functions. The next evolution will likely include AI agents that can proactively identify risks before they become problems and suggest process improvements based on historical sprint data.
 
-## Configuration
+I’m already working on enhancements to integrate with more tools, add predictive analytics capabilities, and improve the system’s ability to generate tailored recommendations. Imagine a near future where AI agents not only report on your team’s performance but participate in planning sessions, offering insights based on past sprints and industry benchmarks.
 
-Before running the Scrum Master AI, you need to configure:
-
-1. Trello API credentials in the `.env` file:
-   ```
-   TRELLO_API_KEY=your_trello_api_key
-   TRELLO_API_TOKEN=your_trello_api_token
-   TRELLO_BOARD_ID=your_trello_board_id
-   ```
-
-2. LLM configuration in `config/settings.yaml`
-
-## Usage
-
-### Basic Usage
-
-Run the Scrum Master AI to generate a sprint report:
-
-```bash
-python main.py run
-```
-
-This will:
-1. Fetch all data from your configured Trello board
-2. Analyze the sprint progress, blockers, and team performance
-3. Generate a comprehensive sprint report
-
-### Advanced Usage
-
-```bash
-# Run with a specific output file
-python main.py run --output my_sprint_report.md
-
-# Train the AI with multiple iterations
-python main.py train --iterations 5 --output training_results.json
-
-# Replay execution from a specific task
-python main.py replay data_analysis_task
-
-# Test with a specific model
-python main.py test --iterations 2 --model gpt-4
-```
-
-## Customization
-
-You can customize the behavior of the Scrum Master AI by modifying the configuration files:
-
-- `config/agents.yaml`: Agent roles, goals, and personalities
-- `config/tasks.yaml`: Task descriptions and expected outputs
-- `config/settings.yaml`: Global application settings
-- `templates/report_template.md`: Report format and structure
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-~~~~
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgements
-
-- [CrewAI](https://github.com/joaomdmoura/crewAI) for the agent orchestration framework
-- Trello for the project management API
-- OpenAI for the language model capabilities
-
+The most exciting aspect isn’t the technology itself but how it transforms our work. By automating the routine aspects of sprint management, we create space for more creative and impactful human contributions — the kind of work that AI can’t easily replicate.
