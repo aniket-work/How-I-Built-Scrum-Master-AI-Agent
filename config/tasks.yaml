@@ -1,0 +1,128 @@
+# Task configurations for the Scrum Master AI system
+# Each task has a specific description, expected output, and assigned agent
+
+data_collection:
+  description: >
+    Create a comprehensive understanding of the sprint project by gathering and organizing all available data.
+    Tasks include:
+    
+    1. Fetch all cards, comments, attachments, and activity data from the Trello board
+    2. Identify all team members and their assigned tasks
+    3. Extract due dates, completion status, and time tracking information
+    4. Collect all comments related to blockers or impediments
+    5. Document the sprint goals and acceptance criteria
+    6. Categorize tasks by status (Backlog, To Do, In Progress, Review, Done)
+    7. Map dependencies between tasks
+    8. Identify tasks with missing information or unclear requirements
+    
+    Use the Trello Data Fetcher tool to retrieve raw data and structure it for analysis.
+  expected_output: >
+    A structured data report containing:
+    
+    1. Complete inventory of all sprint tasks with metadata
+    2. Team member assignments and workload distribution
+    3. Sprint timeline with critical path identification
+    4. Blockers and impediments inventory with status
+    5. Completion percentages by category and overall
+    6. Missing information report for incomplete task definitions
+    7. Communication patterns analysis
+    8. Raw data export in JSON format for further processing
+  agent: data_collection_agent
+  context: []
+  tools: ["BoardDataFetcherTool", "CardDataFetcherTool"]
+
+data_analysis:
+  description: >
+    Perform a detailed analysis of the sprint data to identify patterns, issues, and opportunities.
+    Your analysis should include:
+    
+    1. Velocity calculation and comparison to previous sprints
+    2. Blockers categorization and impact assessment
+    3. Team workload balance evaluation
+    4. Cycle time analysis for completed tasks
+    5. Risk assessment for incomplete tasks
+    6. Story point accuracy analysis
+    7. Identification of process bottlenecks
+    8. Sprint burndown chart interpretation
+    9. Meeting efficiency evaluation
+    10. Adherence to Definition of Done
+    
+    Apply statistical methods where appropriate to quantify observations.
+  expected_output: >
+    A comprehensive analysis report including:
+    
+    1. Executive summary of sprint performance
+    2. Detailed metrics with comparisons to historical data
+    3. Visualization of key performance indicators
+    4. Root cause analysis of identified issues
+    5. Process efficiency evaluation
+    6. Team performance assessment
+    7. Recommendations prioritized by potential impact
+    8. Areas requiring immediate attention
+    9. Positive trends and achievements
+  agent: analysis_agent
+  context: ["data_collection"]
+  tools: []
+
+report_generation:
+  description: >
+    Compile a professional sprint report based on the analysis findings.
+    The report should effectively communicate insights to both technical team members and executive stakeholders.
+    
+    The report must include:
+    
+    1. Sprint Overview
+       - Sprint goals and objectives
+       - Team composition and roles
+       - Timeline and key dates
+    
+    2. Task Summary
+       - Completion statistics
+       - Feature delivery status
+       - Quality metrics
+    
+    3. Identified Issues and Blockers
+       - Current impediments
+       - Resolution status
+       - Impact assessment
+    
+    4. Progress and Delays
+       - Burndown/burnup charts
+       - Velocity metrics
+       - Timeline adjustments
+    
+    5. Team Performance Overview
+       - Individual contributions
+       - Collaboration effectiveness
+       - Skill development opportunities
+    
+    6. Action Items and Recommendations
+       - Prioritized improvements
+       - Resource requirements
+       - Process adjustments
+    
+    7. Retrospective Insights
+       - What went well
+       - What needs improvement
+       - Team feedback
+    
+    The report must be formatted in clean, accessible markdown suitable for executive review.
+    Include data visualizations where appropriate for clarity.
+    Save the report in the current working directory with timestamp in the filename.
+  expected_output: >
+    A professionally formatted sprint report in markdown that:
+    
+    1. Presents information in a clear, scannable format
+    2. Balances technical details with executive insights
+    3. Uses appropriate headings, lists, and emphasis
+    4. Provides actionable recommendations
+    5. Maintains a solution-oriented tone
+    6. Includes appropriate metrics and comparisons
+    7. Celebrates team successes
+    8. Addresses challenges constructively
+    
+    Do not enclose the markdown in any code block.
+  agent: analysis_agent
+  context: ["data_collection", "data_analysis"]
+  tools: []
+  output_file: "sprint_report_{date}.md"
