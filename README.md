@@ -118,7 +118,7 @@ You can customize the behavior of the Scrum Master AI by modifying the configura
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
-
+~~~~
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgements
@@ -127,7 +127,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Trello for the project management API
 - OpenAI for the language model capabilities
 
-## How It Was Built
-
-For a detailed explanation of how this project was built, check out the blog post:
-[How I Built Scrum Master AI Agent](https://yourblog.com/how-i-built-scrum-master-ai-agent)
